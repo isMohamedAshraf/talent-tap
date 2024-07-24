@@ -1,0 +1,24 @@
+spring:
+  datasource:
+    url: jdbc:postgresql://127.0.0.1:5432/talenttap
+    username: username
+    password: password
+  jpa:
+    hibernate:
+      ddl-auto: update
+    show-sql: true
+    properties:
+      hibernate:
+        format_sql: false
+application:
+  security:
+    jwt:
+      secret-key: 425d7ca1cf6e38436879d484cd5924cf4a066054d34c6e3018766af47022c776
+      expiration: 86400000 # a day
+      refresh-token:
+        expiration: 604800000 # 7 days
+  file:
+    uploads:
+      photos-output-path: ./uploads
+server:
+  port: 8088
