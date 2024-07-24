@@ -1,4 +1,4 @@
-package dev.mohamed.talenttap.security.authorizaiton;
+package dev.mohamed.talenttap.security.Exceptions;
 
 import dev.mohamed.talenttap.core.ExceptionResponse;
 import org.springframework.http.ResponseEntity;
@@ -8,8 +8,8 @@ import org.springframework.security.authentication.LockedException;
 import org.springframework.web.bind.annotation.ExceptionHandler;
 import org.springframework.web.bind.annotation.RestControllerAdvice;
 
-import static dev.mohamed.talenttap.security.authorizaiton.AuthorizationErrorCodes.ACCOUNT_LOCKED;
-import static dev.mohamed.talenttap.security.authorizaiton.AuthorizationErrorCodes.*;
+import static dev.mohamed.talenttap.security.Exceptions.AuthorizationErrorCodes.ACCOUNT_LOCKED;
+import static dev.mohamed.talenttap.security.Exceptions.AuthorizationErrorCodes.*;
 import static org.springframework.http.HttpStatus.BAD_REQUEST;
 import static org.springframework.http.HttpStatus.UNAUTHORIZED;
 

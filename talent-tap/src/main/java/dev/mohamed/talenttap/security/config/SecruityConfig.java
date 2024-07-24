@@ -1,7 +1,7 @@
-package dev.mohamed.talenttap.security.config.secruityConfig;
+package dev.mohamed.talenttap.security.config;
 
 import dev.mohamed.talenttap.role.RoleName;
-import dev.mohamed.talenttap.security.authorizaiton.jwt.JwtFilter;
+import dev.mohamed.talenttap.security.jwt.JwtFilter;
 import lombok.RequiredArgsConstructor;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;

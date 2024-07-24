@@ -96,8 +96,7 @@ This project is a freelancing platform designed to connect freelancers with empl
 2. Install frontend dependencies:
 
    ```sh
-   cd frontend
-   npm install
+
    ```
 
 3. Install backend dependencies:
@@ -123,8 +122,7 @@ This project is a freelancing platform designed to connect freelancers with empl
 6. Start the frontend server:
 
    ```sh
-   cd ../frontend
-   npm start
+
    ```
 
 7. Open your browser and navigate to `http://localhost:4200`

@@ -1,4 +1,4 @@
-package dev.mohamed.talenttapapi.handler;
+package dev.mohamed.talenttap.core;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import lombok.*;

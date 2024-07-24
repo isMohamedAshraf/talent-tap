@@ -1,4 +1,4 @@
-package dev.mohamed.talenttap.security.authorizaiton.models;
+package dev.mohamed.talenttap.security.models;
 
 import dev.mohamed.talenttap.user.User;
 import jakarta.validation.constraints.Email;

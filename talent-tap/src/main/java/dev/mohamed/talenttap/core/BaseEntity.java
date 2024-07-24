@@ -1,2 +1,4 @@
-package dev.mohamed.talenttap;public class BaseEntity {
+package dev.mohamed.talenttap.core;
+
+public class BaseEntity {
 }

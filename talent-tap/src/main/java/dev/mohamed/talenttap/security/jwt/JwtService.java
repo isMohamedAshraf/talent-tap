@@ -1,4 +1,4 @@
-package dev.mohamed.talenttap.security.authorizaiton.jwt;
+package dev.mohamed.talenttap.security.jwt;
 
 import io.jsonwebtoken.Claims;
 import io.jsonwebtoken.Jwts;

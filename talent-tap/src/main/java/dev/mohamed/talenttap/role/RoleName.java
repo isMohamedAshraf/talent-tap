@@ -1,4 +1,4 @@
-package dev.mohamed.talenttap.security.config.secruityConfig.role;
+package dev.mohamed.talenttap.role;
 
 
 public enum RoleName {

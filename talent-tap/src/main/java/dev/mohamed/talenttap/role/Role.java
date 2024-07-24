@@ -1,4 +1,4 @@
-package dev.mohamed.talenttap.security.config.secruityConfig.role;
+package dev.mohamed.talenttap.role;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import dev.mohamed.talenttap.user.User;

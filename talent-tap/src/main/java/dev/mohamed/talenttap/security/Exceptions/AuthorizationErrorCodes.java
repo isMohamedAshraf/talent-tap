@@ -1,4 +1,4 @@
-package dev.mohamed.talenttap.security.authorizaiton;
+package dev.mohamed.talenttap.security.Exceptions;
 
 import lombok.Getter;
 import org.springframework.http.HttpStatus;

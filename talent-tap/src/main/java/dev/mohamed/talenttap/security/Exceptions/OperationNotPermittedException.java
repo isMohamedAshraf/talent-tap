@@ -1,4 +1,4 @@
-package dev.mohamed.talenttapapi.exception;
+package dev.mohamed.talenttap.security.Exceptions;
 
 public class OperationNotPermittedException extends RuntimeException {
 

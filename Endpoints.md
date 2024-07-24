@@ -6,33 +6,27 @@ Below are the REST API endpoints for the freelancing platform. These endpoints c
 
 #### Register User
 
-- **Endpoint:** `POST /api/auth/register`
+- **Endpoint:** `POST auth/register`
 - **Description:** Register a new user (freelancer or employer).
 - **Request Body:**
   ```json
   {
-    "username": "string",
-    "email": "string",
-    "password": "string",
-    "role": "string" // "freelancer" or "employer"
+    "username": "ashraf",
+    "firstname": "Mohamed",
+    "lastname": "Ashraf",
+    "email": "mohamed@ashraf.com",
+    "password": "password",
+    "isFreelancer": false
   }
   ```
 - **Response:**
-  ```json
-  {
-    "message": "User registered successfully",
-    "user": {
-      "id": "string",
-      "username": "string",
-      "email": "string",
-      "role": "string"
-    }
-  }
+  ```
+  Response code: 202
   ```
 
 #### Login
 
-- **Endpoint:** `POST /api/auth/login`
+- **Endpoint:** `POST auth/login`
 - **Description:** Authenticate a user and return a JWT token.
 - **Request Body:**
   ```json
@@ -44,13 +38,7 @@ Below are the REST API endpoints for the freelancing platform. These endpoints c
 - **Response:**
   ```json
   {
-    "token": "string",
-    "user": {
-      "id": "string",
-      "username": "string",
-      "email": "string",
-      "role": "string"
-    }
+    "token": "eyJhbGciOiJIUzM4NCJ9.eyJmdWxsTmFtZSI6ImFzaHJhZiIsInN1YiI6ImFzaHJhZiIsImlhdCI6MTcyMTgxMTU4MiwiZXhwIjoxNzIxODk3OTgyLCJhdXRob3JpdGllcyI6WyJDTElFTlQiXSwiaXNzIjoiU3lzdGVtIn0.ckewiaU0vVgQiwmU9lmb7fUNhZEMhJqm4bex7p4aXnBF6LzUtoqlJ7cduXJ-Bwfu"
   }
   ```
 
@@ -58,7 +46,7 @@ Below are the REST API endpoints for the freelancing platform. These endpoints c
 
 #### Get User Profile
 
-- **Endpoint:** `GET /api/users/:id`
+- **Endpoint:** `GET users/:id`
 - **Description:** Get the profile information of a user by their ID.
 - **Response:**
   ```json
@@ -78,7 +66,7 @@ Below are the REST API endpoints for the freelancing platform. These endpoints c
 
 #### Update User Profile
 
-- **Endpoint:** `PUT /api/users/:id`
+- **Endpoint:** `PUT users/:id`
 - **Description:** Update the profile information of a user.
 - **Request Body:**
   ```json
@@ -106,7 +94,7 @@ Below are the REST API endpoints for the freelancing platform. These endpoints c
 
 #### Create Job Posting
 
-- **Endpoint:** `POST /api/jobs`
+- **Endpoint:** `POST jobs`
 - **Description:** Create a new job posting.
 - **Request Body:**
   ```json
@@ -136,7 +124,7 @@ Below are the REST API endpoints for the freelancing platform. These endpoints c
 
 #### Get Job Postings
 
-- **Endpoint:** `GET /api/jobs`
+- **Endpoint:** `GET jobs`
 - **Description:** Get a list of all job postings.
 - **Response:**
   ```json
@@ -157,7 +145,7 @@ Below are the REST API endpoints for the freelancing platform. These endpoints c
 
 #### Get Job Posting by ID
 
-- **Endpoint:** `GET /api/jobs/:id`
+- **Endpoint:** `GET jobs/:id`
 - **Description:** Get a job posting by its ID.
 - **Response:**
   ```json
@@ -174,7 +162,7 @@ Below are the REST API endpoints for the freelancing platform. These endpoints c
 
 #### Update Job Posting
 
-- **Endpoint:** `PUT /api/jobs/:id`
+- **Endpoint:** `PUT jobs/:id`
 - **Description:** Update a job posting by its ID.
 - **Request Body:**
   ```json
@@ -204,7 +192,7 @@ Below are the REST API endpoints for the freelancing platform. These endpoints c
 
 #### Delete Job Posting
 
-- **Endpoint:** `DELETE /api/jobs/:id`
+- **Endpoint:** `DELETE jobs/:id`
 - **Description:** Delete a job posting by its ID.
 - **Response:**
   ```json
@@ -217,7 +205,7 @@ Below are the REST API endpoints for the freelancing platform. These endpoints c
 
 #### Submit Proposal
 
-- **Endpoint:** `POST /api/jobs/:jobId/proposals`
+- **Endpoint:** `POST jobs/:jobId/proposals`
 - **Description:** Submit a proposal for a job posting.
 - **Request Body:**
   ```json
@@ -244,7 +232,7 @@ Below are the REST API endpoints for the freelancing platform. These endpoints c
 
 #### Get Proposals for a Job
 
-- **Endpoint:** `GET /api/jobs/:jobId/proposals`
+- **Endpoint:** `GET jobs/:jobId/proposals`
 - **Description:** Get all proposals for a specific job posting.
 - **Response:**
   ```json
@@ -266,7 +254,7 @@ Below are the REST API endpoints for the freelancing platform. These endpoints c
 
 #### Send Message
 
-- **Endpoint:** `POST /api/messages`
+- **Endpoint:** `POST messages`
 - **Description:** Send a message to another user.
 - **Request Body:**
   ```json
@@ -291,7 +279,7 @@ Below are the REST API endpoints for the freelancing platform. These endpoints c
 
 #### Get Messages
 
-- **Endpoint:** `GET /api/messages`
+- **Endpoint:** `GET messages`
 - **Description:** Get all messages for the logged-in user.
 - **Response:**
   ```json
@@ -312,7 +300,7 @@ Below are the REST API endpoints for the freelancing platform. These endpoints c
 
 #### Make Payment
 
-- **Endpoint:** `POST /api/payments`
+- **Endpoint:** `POST payments`
 - **Description:** Process a payment from an employer to a freelancer.
 - **Request Body:**
   ```json
@@ -340,7 +328,7 @@ Below are the REST API endpoints for the freelancing platform. These endpoints c
 
 #### Submit Review
 
-- **Endpoint:** `POST /api/reviews`
+- **Endpoint:** `POST reviews`
 - **Description:** Submit a review and rating for a user.
 - **Request Body:**
   ```json
@@ -366,7 +354,7 @@ Below are the REST API endpoints for the freelancing platform. These endpoints c
 
 #### Get Reviews for a User
 
-- **Endpoint:** `GET /api/users/:id/reviews`
+- **Endpoint:** `GET users/:id/reviews`
 - **Description:** Get all reviews for a specific user.
 - **Response:**
   ```json
@@ -382,5 +370,3 @@ Below are the REST API endpoints for the freelancing platform. These endpoints c
     ]
   }
   ```
-
-These endpoints provide the necessary functionality for user authentication, profile management, job postings, proposals, messaging, payment processing, and reviews on the freelancing platform.

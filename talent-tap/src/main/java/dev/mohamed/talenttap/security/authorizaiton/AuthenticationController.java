@@ -1,6 +1,8 @@
-package dev.mohamed.talenttapapi.security.auth;
+package dev.mohamed.talenttap.security.authorizaiton;
 
-import dev.mohamed.talenttapapi.user.UserRepository;
+import dev.mohamed.talenttap.security.models.AuthenticationRequest;
+import dev.mohamed.talenttap.security.models.AuthenticationResponse;
+import dev.mohamed.talenttap.security.models.RegistrationRequest;
 import io.swagger.v3.oas.annotations.tags.Tag;
 import jakarta.validation.Valid;
 import lombok.RequiredArgsConstructor;
@@ -16,7 +18,6 @@ public class AuthenticationController {
 
     private final AuthenticationService service;
 
-
     @PostMapping("/register")
     @ResponseStatus(HttpStatus.ACCEPTED)
     public ResponseEntity<?> register(
@@ -26,13 +27,11 @@ public class AuthenticationController {
         return ResponseEntity.accepted().build();
     }
 
-    @PostMapping("/authenticate")
+    @PostMapping("/login")
     public ResponseEntity<AuthenticationResponse> authenticate(
             @RequestBody AuthenticationRequest request
     ) {
         return ResponseEntity.ok(service.authenticate(request));
     }
-
-
 
 }

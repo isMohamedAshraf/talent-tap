@@ -1,4 +1,4 @@
-package dev.mohamed.talenttap.security.authorizaiton.jwt;
+package dev.mohamed.talenttap.security.jwt;
 
 import jakarta.servlet.FilterChain;
 import jakarta.servlet.ServletException;
