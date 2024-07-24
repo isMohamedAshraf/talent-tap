@@ -1,0 +1,206 @@
+Sure! Below are descriptions of the use case and data flow diagrams for the freelancing platform.
+
+### Use Case Diagram
+
+The use case diagram will represent the interactions between the users (actors) and the system. It will show the different functions that each user can perform on the platform.
+
+These diagrams provide a visual representation of the main functionalities and data flow within the freelancing platform, making it easier to understand the system's architecture and interactions.
+
+#### Actors:
+
+- Freelancer
+- Employer
+- Administrator
+
+#### Use Cases:
+
+1. **Register Account**
+
+   - Actors: Freelancer, Employer
+   - Description: Users can register on the platform using an email address or social media accounts.
+
+2. **Login**
+
+   - Actors: Freelancer, Employer, Administrator
+   - Description: Users can log into the platform using their credentials.
+
+3. **Manage Profile**
+
+   - Actors: Freelancer, Employer
+   - Description: Users can create and update their profiles with personal and professional information.
+
+4. **Post Job**
+
+   - Actors: Employer
+   - Description: Employers can post job opportunities with detailed descriptions, requirements, and deadlines.
+
+5. **Search Jobs**
+
+   - Actors: Freelancer
+   - Description: Freelancers can search for job postings using various filters.
+
+6. **Submit Proposal**
+
+   - Actors: Freelancer
+   - Description: Freelancers can submit proposals for job postings.
+
+7. **Review Proposals**
+
+   - Actors: Employer
+   - Description: Employers can review and manage proposals submitted by freelancers.
+
+8. **Message User**
+
+   - Actors: Freelancer, Employer
+   - Description: Users can communicate with each other through the messaging system.
+
+9. **Process Payment**
+
+   - Actors: Freelancer, Employer
+   - Description: Employers can make payments to freelancers for completed work.
+
+10. **Rate and Review**
+
+    - Actors: Freelancer, Employer
+    - Description: Users can rate and review each other based on their experiences.
+
+11. **Manage Platform**
+    - Actors: Administrator
+    - Description: Administrators can manage the platform, handle disputes, and maintain system integrity.
+
+#### Use Case Diagram:
+
+```plaintext
+             +--------------+
+             |  Administrator|
+             +------+-------+
+                    |
+                    | Manages Platform
+                    |
+             +------+-------+
+             |    Platform    |
+             +------+-------+
+                    /\
+                   /  \
+     Registers  /        \  Logs In
+               /            \
++------------+                +------------+
+| Freelancer |                |  Employer  |
++------------+                +------------+
+     |            \            /        |  Manages
+     |             \          /         |  Profile
+     |  Manages     \        /   Manages|
+     |  Profile       \    /    Profile |
+     |                  \  /             |
+     |                   \/              |
+  Searches              Posts           |
+  Jobs                  Jobs             |
+     \                    /              |
+      \                  /               |
+   Submits              Reviews          |
+   Proposals            Proposals        |
+       \                 /               |
+        \               /                |
+       +----------------+                |
+       |   Messaging System   |<---------+
+       +----------------+
+               /\
+              /  \
+  Submits    /    \   Processes
+ Proposals  /      \  Payments
+          /        \
+     +------------+  +------------+
+     | Freelancer |  |  Employer  |
+     +------------+  +------------+
+                     |
+              Rates and Reviews
+                     |
+                     +
+              +-------------+
+              |   Platform  |
+              +-------------+
+```
+
+### Data Flow Diagram
+
+The data flow diagram (DFD) will represent the flow of information within the system. It will show how data moves between different processes and data stores.
+
+#### Level 0 - Context Diagram
+
+```plaintext
+            +---------------------+
+            |     Freelancer      |
+            +---------+-----------+
+                      |
+                      | Submits Proposals, Logs In, Manages Profile
+                      |
+              +-------v--------+
+              |   Platform     |
+              +-------+--------+
+                      |
+                      | Posts Jobs, Logs In, Manages Profile
+                      |
+            +---------v----------+
+            |      Employer      |
+            +--------------------+
+                      |
+                      | Manages Platform
+                      |
+             +--------v---------+
+             |   Administrator  |
+             +------------------+
+```
+
+#### Level 1 - Detailed Data Flow Diagram
+
+```plaintext
+                           +------------------------+
+                           |      Freelancer        |
+                           +-----------+------------+
+                                       |
+              Registers, Logs In, Manages Profile   |
+            ----------------------------------------+-----------------
+            |                                       |               |
+            v                                       |               |
++-------------------------+                        v               v
+| 1.0 User Management     |                 +-------------+   +-------------------+
+| - Register              |                 | 4.0 Job     |   | 5.0 Proposal      |
+| - Login                 |                 |    Posting  |   |    Submission     |
+| - Manage Profile        |                 +-------------+   +-------------------+
+| - Search Jobs           |                        |                  |
+| - Rate and Review       |                        | Posts Jobs       |
++------------+------------+                        v                  |
+             |                                 +------------+         |
+             | Registers                       | Job Data   |         |
+             | Logs In                         +-----+------+         |
+             | Manages Profile                       |                |
+             | Searches Jobs                         |                |
+             | Rates and Reviews                     |                |
+             v                                       |                |
++------------+------------+                          |                |
+| 2.0 Messaging System    |                          |                |
+| - Send/Receive Messages |                          |                |
+| - Store Messages        |                          |                |
++------------+------------+                          |                |
+             |                                       |                |
+             |                                       v                v
+             |                                 +------------+  +-------------+
+             |                                 | Job Postings|  | Proposal    |
+             |                                 | Data Store  |  | Data Store  |
+             |                                 +-------------+  +-------------+
+             v                                         |
++-------------------------+                            |
+| 3.0 Payment Processing  |                            |
+| - Process Payments      |                            |
+| - Handle Disputes       |                            |
+| - Issue Refunds         |                            |
++------------+------------+                            |
+             |                                         |
+             | Processes Payments                      |
+             | Handles Disputes                        |
+             | Issues Refunds                          |
+             v                                         |
++-------------------------+                            |
+|    Payment Data Store   |<---------------------------+
++-------------------------+
+```
